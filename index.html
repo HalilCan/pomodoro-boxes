@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>pomodoroClock</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class='container' id='timer-status-box'>
+  <div class='box'>
+    <span id='span-status'>
+  Timer is paused
+</span>
+    <span id='span-timer'>
+  <form>
+  <input id = 'minBox' type="text" name="mins" value=00 disabled = 'disabled'>:
+  <input id = 'secBox' type="text" name="secs" value=01 disabled = 'disabled'><br>
+  <input id = 'toggleButton' type="button" value="Play?" onclick = "toggleState();">
+  </form>
+</span>
+  </div>
+  <div class='box' id='loop-display-box'>
+    <span id='span-loop-table'>
+        Timeblock queue:
+        <ul id = 'box-list'>
+    
+    <!--<li>
+    <div id = 'timeBlock-1' class = 'time-block'>
+      <form>
+        <input id = 'minBox-1' class = 'min-box' type="text" name="mins" value=14>:
+        <input id = 'secBox-1' class = 'sec-box' type="text" name="secs" value=00>
+        <input id = 'delete-1' class = 'delete-btn' type="button" value="X" onclick = "deleteBox(1);">
+      </form>
+</div> </li> -->
+           Empty
+  </ul>
+</span>
+  </div>
+
+  <div class='box' id='loop-box'>
+    <span id='span-add'>
+          <div>
+            Add a set of timeblocks:
+          </div>
+          
+  <form>
+    <div class = 'container' id = 'add-box'>
+    <div class = 'box'>
+    <input id = 'minBoxNew' class = 'min-box' type="text" name="mins" value=25>:
+        <input id = 'secBoxNew' class = 'sec-box' type="text" name="secs" value=00>-
+    <input id = 'labelBoxNew' class = 'label-box' type="text" name="label" value="Focus"> <br>
+    <input id = 'minBoxNewR' class = 'min-box' type="text" name="mins" value=5>:
+        <input id = 'secBoxNewR' class = 'sec-box' type="text" name="secs" value=00>-
+    <input id = 'labelBoxNewR' class = 'label-box' type="text" name="label" value="Relax">
+    </div>
+    <div class = 'box'>
+    <input id = 'add-box-btn' class = 'add-btn' type="button" value="+" onclick = "addBox();">
+    </div>
+    </div>
+  </form>
+</span>
+  </div>
+
+
+</div>
+
+<!--<div class='container' id='button-container'>
+  <div class='box'>
+    Pause/play
+  </div>
+</div> 
+
+
+<div class='container'>
+  <br>
+
+
+  <div class='box' id='guide-box'>
+    Guide here
+  </div>
+-->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://www.google.com/jsapi'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
