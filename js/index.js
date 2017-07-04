@@ -11,6 +11,10 @@ var secs = 0;
 var label = '';
 var paused = true;
 
+var currentTime = new Date()
+var realHours = currentTime.getHours()
+var realMinutes = currentTime.getMinutes()
+
 var boxes = [1];
 
 function parseSecs() {
@@ -41,23 +45,6 @@ function toggleState() {
     statusBox.innerHTML = ('Time is ticking');
     toggleButton.value = ('Pause');
   }
-  /*
-  //refresh html form values into block array
-  var items = boxList.getElementsByTagName("li");
-  if (items.length < 1) {
-    console.log('empty!');
-  } else {
-    for (var lindex = 0; lindex < items.length; lindex ++) {
-      var minB = document.getElementById('minBox' + lindex);
-      var secB = document.getElementById('secBox' + lindex);
-      var labB = document.getElementById('labelBox' + lindex);
-      console.log(secB);
-    }
-  }
-  
-  //match current timer from array[0]
-  refreshBox();
-  updateDisp(); */
 }
 
 window.setInterval(countDown, 1000);
@@ -169,3 +156,24 @@ function stringToHTML(label) {
   retVal += '"';
   return retVal;
 }
+
+function changeColor() {
+  //rgb
+  console.log('event fired');
+  var colors = [0, 0, 0];
+  var hour = new Date().getHours();
+  console.log(hour);
+  
+  //Will get a valid rgb color
+  var color = parseInt(255 - 255/24*(24 - hour));
+  console.log(color);
+  for(var i = 0; i < colors.length; i++) {
+    colors[i] = color;
+  }
+  
+  document.body.style.backgroundColor = "rgb("+colors[0] + "," + colors[1] + "," + colors[2] + ")";
+  console.log("event fired. color get:" + colors[0] + colors[1] + colors[2]);
+}
+
+setInterval(changeColor,1000);
+

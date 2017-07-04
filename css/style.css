@@ -6,6 +6,11 @@
 body {
   background-color: white;
   color: black;
+    -moz-transition: background-color 1s ease-out;  /* FF4+ */
+    -webkit-transition: background-color 1s ease-out;  /* Saf3.2+, Chrome */
+    -o-transition: background-color 1s ease-out;  /* Opera 10.5+ */
+    -ms-transition: background-color 1s ease-out;  /* IE10? */
+    transition: background-color 1s ease-out;  /* Standard */
 }
 
 #pomodoro-box {
@@ -22,6 +27,7 @@ body {
 
 .container 
 {
+    background-color: whitesmoke;
   display: flex;
   border: 1px dotted black;
   border-radius: 4px;
@@ -31,19 +37,19 @@ body {
 }
 
 .min-box{
-  background-color:white;
+    background-color: whitesmoke;
   width: 50px;
   border: none;
 }
 
 .sec-box{
-  background-color:white;
+    background-color: whitesmoke;
   width: 50px;
   border: none;
 }
 
 .label-box {
-  background-color:white;
+    background-color: whitesmoke;
   width: 150px;
   border: none;
   border-bottom: 1px solid black;
