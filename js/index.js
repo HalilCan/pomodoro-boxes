@@ -4,6 +4,7 @@ var secBox = document.getElementById("secBox");
 var statusBox = document.getElementById('span-status');
 var boxList = document.getElementById('box-list');
 var toggleButton = document.getElementById('toggleButton');
+var timerLabel = document.getElementById('timer-label');
 
 var mins = 0;
 var secs = 0;
@@ -80,13 +81,15 @@ function countDown() {
 function updateDisp() {
   minBox.value = mins;
   secBox.value = secs;
+  console.log(label);
+  timerLabel.innerHTML = label;
 }
 
 function refreshBox() {
   box = boxes[0];
   mins = box.minutes;
-  label = box.label;
   seconds = box.seconds;
+  label = box.label;
 }
 
 function timeOut() {
@@ -140,8 +143,7 @@ function renderBoxes() {
     var box = boxes[i];
     var boxLi = document.createElement("LI");
     var boxMinutes = parseInt(box.minutes, 10) + Math.floor(box.seconds / 60);
-    console.log(box.label);
-    console.log(stringToHTML(box.label));
+    
     boxLi.innerHTML = ("<div id = 'timeBlock-" + i + "' class = 'time-block'> " +
     "<form> <input id = 'minBox-" + i + "' class = 'min-box' type='text' " +
     "name='mins' disabled = 'disabled' value="+ boxMinutes +">:<input id = " +

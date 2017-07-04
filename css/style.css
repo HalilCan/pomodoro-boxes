@@ -13,6 +13,13 @@ body {
   display:inline-block;
 }
 
+#timer-label {
+  float:right;
+  text-emphasis: goldenrod;
+  display: inline-block;
+  text-align: right;
+}
+
 .container 
 {
   display: flex;
