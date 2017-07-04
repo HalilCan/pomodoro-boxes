@@ -11,6 +11,9 @@ var secs = 0;
 var label = '';
 var paused = true;
 
+var bellPath = 'sounds/japanese_temple_bell.mp3';
+var bell = new Audio(bellPath);
+
 var currentTime = new Date()
 var realHours = currentTime.getHours()
 var realMinutes = currentTime.getMinutes()
@@ -77,10 +80,12 @@ function refreshBox() {
   mins = box.minutes;
   seconds = box.seconds;
   label = box.label;
+  stop_alert();
 }
 
 function timeOut() {
   toggleState();
+  play_alert();
   alert("Time Out!");
   if (boxes.length > 1) {
     boxes.splice(0,1);
@@ -175,5 +180,13 @@ function changeColor() {
   console.log("event fired. color get:" + colors[0] + colors[1] + colors[2]);
 }
 
-setInterval(changeColor,1000);
+setInterval(changeColor,1000000);
 
+function play_alert() {
+  bell.play();
+}
+
+function stop_alert() {
+  bell.pause();
+  bell.currentTime = 0;
+}
