@@ -117,7 +117,7 @@ function addBox() {
   var labelBoxNewR = document.getElementById('labelBoxNewR');
   
   var newBox = genTimeBox(minBoxNew.value, secBoxNew.value, labelBoxNew.value); 
-  var newBoxR = genTimeBox(minBoxNewR.value, secBoxNewR.value, labelBoxNewR.value); 
+  var newBoxR = genTimeBox(minBoxNewR.value, secBoxNewR.value, labelBoxNewR.value);
   boxes.push(newBox);
   boxes.push(newBoxR);
   clearBoxesOnScreen();
@@ -140,11 +140,30 @@ function renderBoxes() {
     var box = boxes[i];
     var boxLi = document.createElement("LI");
     var boxMinutes = parseInt(box.minutes, 10) + Math.floor(box.seconds / 60);
-    
-    boxLi.innerHTML = ("<div id = 'timeBlock-" + i + "' class = 'time-block'> <form> <input id = 'minBox-" + i + "' class = 'min-box' type='text' name='mins' disabled = 'disabled' value="+ boxMinutes +">:<input id = 'secBox-"+ i +"' class = 'sec-box' type='text' name='secs' disabled = 'disabled' value="+ box.seconds%60 +"><input id = 'labelBox-"+ i +"' class = 'label-box' type='text' disabled = 'disabled' name='label' value="+ box.label +"> <input id = 'delete-"+ i +"' class = 'delete-btn' type='button' value='X' onclick = 'deleteBox("+i+");'> </form> </div>");
+    console.log(box.label);
+    console.log(stringToHTML(box.label));
+    boxLi.innerHTML = ("<div id = 'timeBlock-" + i + "' class = 'time-block'> " +
+    "<form> <input id = 'minBox-" + i + "' class = 'min-box' type='text' " +
+    "name='mins' disabled = 'disabled' value="+ boxMinutes +">:<input id = " +
+    "'secBox-"+ i +"' class = 'sec-box' type='text' name='secs' disabled = " +
+    "'disabled' value="+ box.seconds%60 +"><input id = 'labelBox-"+ i +"' " +
+    "class = 'label-box' type='text' disabled = 'disabled' name='label' " +
+    "value="+ stringToHTML(box.label) +"> <input id = 'delete-"+ i +"' class = 'delete-btn' " +
+    "type='button' value='X' onclick = 'deleteBox("+i+");'> </form> </div>");
     
       
     boxList.appendChild(boxLi);
     
   }
+}
+
+function stringToHTML(label) {
+  var lb = label.split(' ');
+  var retVal = '';
+  retVal += '"';
+  for (var i = 0; i < lb.length; i ++) {
+    retVal = retVal + lb[i]  + ' ';
+  }
+  retVal += '"';
+  return retVal;
 }
