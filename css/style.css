@@ -36,6 +36,11 @@ body {
   width: 500px;
 }
 
+#span-timer input[type="text"]:disabled {
+  background: aliceblue;
+  border: 1px dotted cornflowerblue;
+  border-radius: 2px;
+}
 
 #hdr {
   font-family: 'Bungee Shade', cursive;
@@ -150,6 +155,7 @@ ul {
 .time-block {
   border: 1px solid black;
   border-radius: 4px;
+  margin-top: 3px;
   padding: 5px 0px 5px 10px;
 }
 
