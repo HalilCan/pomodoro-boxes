@@ -29,12 +29,13 @@ body {
 {
     background-color: whitesmoke;
   display: flex;
-  border: 1px dotted black;
+  border: 2px dotted darkblue;
   border-radius: 4px;
   flex-flow: row nowrap;
   margin: auto;
   width: 500px;
 }
+
 
 #hdr {
   font-family: 'Bungee Shade', cursive;
@@ -73,6 +74,48 @@ body {
   margin-top: 40px;
 }
 
+.btn {
+  position: relative;
+  display: block;
+  margin: 2px auto;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #3e75cc;
+  color: #ecf0f1;
+
+  transition: background-color .3s;
+}
+
+.btn:hover, .btn:focus {
+  background-color: #2543ae;
+}
+
+.btn > * {
+  position: relative;
+}
+
+body {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  background-color: #ecf0f1;
+  color: #34495e;
+  text-align: center;
+}
 
 ul {
   padding-left: 10px;
@@ -90,6 +133,11 @@ ul {
 
 #add-box {
   width: 400px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  padding-top: 3px;
+  border-radius: 0;
 }
 
 #loop-display-box {

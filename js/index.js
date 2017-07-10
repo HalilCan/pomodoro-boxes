@@ -14,9 +14,9 @@ var paused = true;
 var bellPath = 'sounds/japanese_temple_bell.mp3';
 var bell = new Audio(bellPath);
 
-var currentTime = new Date()
-var realHours = currentTime.getHours()
-var realMinutes = currentTime.getMinutes()
+var currentTime = new Date();
+var realHours = currentTime.getHours();
+var realMinutes = currentTime.getMinutes();
 
 var boxes = [1];
 
@@ -98,6 +98,14 @@ function timeOut() {
     refreshBox();
     updateDisp();
   }
+}
+
+function genRealtimeBox (xMin, xSec, index) {
+  var hrs = realHours + Math.floor(xMin / 60);
+  var mins = (realMinutes + xMin + Math.floor(xSec / 60)) % 60;
+  
+  return ('<span class = rt-box id = rt-box-' + index + '> <span id = rt-Hrs-' + index +
+  '>' + hrs + '</span> <span id = rt-Mins-' + index + '>' + mins + '</span></span>');
 }
 
 function genTimeBox (m, s, label) {
