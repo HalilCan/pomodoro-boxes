@@ -97,6 +97,17 @@ function timeOut() {
 }
 
 function genTimeBox (m, s, label) {
+  if (!Number.isInteger(m) || m < 0) {
+    m = 0;
+  }
+  if (!Number.isInteger(s) || s < 0) {
+    s = 0;
+  }
+  
+  if (isNaN(label) || label === null || typeof label === 'undefined') {
+    label = '';
+  }
+  
   return {
     minutes: m, seconds: s, label: label
   };
