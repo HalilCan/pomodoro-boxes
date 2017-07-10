@@ -97,10 +97,10 @@ function timeOut() {
 }
 
 function genTimeBox (m, s, label) {
-  if (!Number.isInteger(m) || m < 0) {
+  if (!(m > -1)) {
     m = 0;
   }
-  if (!Number.isInteger(s) || s < 0) {
+  if (!(s > -1)) {
     s = 0;
   }
   
