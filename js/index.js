@@ -105,7 +105,7 @@ function genRealtimeBox (xMin, xSec, index) {
   var mins = (realMinutes + xMin + Math.floor(xSec / 60)) % 60;
   
   return ('<span class = rt-box id = rt-box-' + index + '> <span id = rt-Hrs-' + index +
-  '>' + hrs + '</span> <span id = rt-Mins-' + index + '>' + mins + '</span></span>');
+  '>' + hrs + '</span> : <span id = rt-Mins-' + index + '>' + mins + '</span></span>');
 }
 
 function genTimeBox (m, s, label) {
@@ -163,10 +163,10 @@ function renderBoxes() {
     "<form> <input id = 'minBox-" + i + "' class = 'min-box' type='text' " +
     "name='mins' disabled = 'disabled' value="+ boxMinutes +">:<input id = " +
     "'secBox-"+ i +"' class = 'sec-box' type='text' name='secs' disabled = " +
-    "'disabled' value="+ box.seconds%60 +"><input id = 'labelBox-"+ i +"' " +
+    "'disabled' value="+ box.seconds%60 + "><input id = 'labelBox-"+ i +"' " +
     "class = 'label-box' type='text' disabled = 'disabled' name='label' " +
     "value="+ stringToHTML(box.label) +"> <input id = 'delete-"+ i +"' class = 'delete-btn' " +
-    "type='button' value='X' onclick = 'deleteBox("+i+");'> </form> </div>");
+    "type='button' value='X' onclick = 'deleteBox("+i+");'> </form></div>" + genRealtimeBox(boxMinutes, box.seconds % 60, i));
     
       
     boxList.appendChild(boxLi);
