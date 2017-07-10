@@ -39,7 +39,8 @@ body {
 #hdr {
   font-family: 'Bungee Shade', cursive;
   font-size: 2em;
-  color: mediumvioletred;
+  color: darkblue;
+    margin: 0 auto;
 }
 
 .min-box{
@@ -68,7 +69,6 @@ body {
 
 #timer-status-box{
   min-height: 400px;
-
   flex-flow: column wrap;
   margin-top: 40px;
 }

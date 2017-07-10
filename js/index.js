@@ -108,7 +108,7 @@ function genTimeBox (m, s, label) {
     s = 0;
   }
   
-  if (isNaN(label) || label === null || typeof label === 'undefined') {
+  if (label === null) {
     label = '';
   }
   
