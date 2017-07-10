@@ -44,9 +44,13 @@ function toggleState() {
   if (paused) {
     statusBox.innerHTML = ('Timer is paused');
     toggleButton.value = ('Play');
+    minBox.disabled = false;
+    secBox.disabled = false;
   } else {
     statusBox.innerHTML = ('Time is ticking');
     toggleButton.value = ('Pause');
+    minBox.disabled = true;
+    secBox.disabled = true;
   }
 }
 
