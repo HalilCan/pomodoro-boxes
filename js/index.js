@@ -62,6 +62,9 @@ function countDown() {
       timeOut();
     } else {
       if (secs == 0) {
+      //render duo here to update realtime info
+      clearBoxesOnScreen();
+      renderBoxes();
         mins -= 1;
         secs = 59;
       } else {
@@ -101,8 +104,12 @@ function timeOut() {
 }
 
 function genRealtimeBox (xMin, xSec, index) {
-  var hrs = realHours + Math.floor(xMin / 60);
-  var mins = (realMinutes + xMin + Math.floor(xSec / 60)) % 60;
+  var mins2 = totalBtnTimeUpToIndex(index)[0];
+  var secs2 = totalBtnTimeUpToIndex(index)[1];
+  
+  var mins = (realMinutes + mins2 + Math.floor(secs2 / 60)) % 60;
+  var totMins = realMinutes + mins2 + Math.floor(secs2 / 60);
+  var hrs = realHours + Math.floor(totMins / 60);
   
   return ('<span class = rt-box id = rt-box-' + index + '> <span id = rt-Hrs-' + index +
   '>' + hrs + '</span> : <span id = rt-Mins-' + index + '>' + mins + '</span></span>');
@@ -212,4 +219,20 @@ function play_alert() {
 function stop_alert() {
   bell.pause();
   bell.currentTime = 0;
+}
+
+function totalBtnTimeUpToIndex (index) {
+  var mins = 0;
+  var secs = 0;
+  for (var i = 0; i < index + 1; i ++) {
+    if (parseInt(boxes[i].minutes) > -1) {
+      mins += parseInt(boxes[i].minutes);
+      secs += parseInt(boxes[i].seconds);
+    }
+  }
+  mins += Math.floor(secs / 60);
+  secs = secs % 60;
+  
+  console.log('mins: ' + mins);
+  return [mins, secs];
 }
