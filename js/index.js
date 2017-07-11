@@ -41,6 +41,10 @@ function toggleState() {
     secs = 0;
   }
   
+  //render duo here to update realtime info
+  clearBoxesOnScreen();
+  renderBoxes();
+  
   if (paused) {
     statusBox.innerHTML = ('Timer is paused');
     toggleButton.value = ('Play');
@@ -62,9 +66,6 @@ function countDown() {
       timeOut();
     } else {
       if (secs == 0) {
-      //render duo here to update realtime info
-      clearBoxesOnScreen();
-      renderBoxes();
         mins -= 1;
         secs = 59;
       } else {
