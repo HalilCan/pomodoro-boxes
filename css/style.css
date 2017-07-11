@@ -163,4 +163,13 @@ ul {
   width: 70px;
   margin-left: 150px;
   margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.rt-box {
+  display: inline;
+  position: absolute;
+  margin-left: 155px;
+  margin-top: -33px;
+  color: #d7dee4;
 }

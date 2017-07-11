@@ -41,6 +41,10 @@ function toggleState() {
     secs = 0;
   }
   
+  //render duo here to update realtime info
+  clearBoxesOnScreen();
+  renderBoxes();
+  
   if (paused) {
     statusBox.innerHTML = ('Timer is paused');
     toggleButton.value = ('Play');
@@ -101,11 +105,15 @@ function timeOut() {
 }
 
 function genRealtimeBox (xMin, xSec, index) {
-  var hrs = realHours + Math.floor(xMin / 60);
-  var mins = (realMinutes + xMin + Math.floor(xSec / 60)) % 60;
+  var mins2 = totalBtnTimeUpToIndex(index)[0];
+  var secs2 = totalBtnTimeUpToIndex(index)[1];
   
-  return ('<span class = rt-box id = rt-box-' + index + '> <span id = rt-Hrs-' + index +
-  '>' + hrs + '</span> <span id = rt-Mins-' + index + '>' + mins + '</span></span>');
+  var mins = (realMinutes + mins2 + Math.floor(secs2 / 60)) % 60;
+  var totMins = realMinutes + mins2 + Math.floor(secs2 / 60);
+  var hrs = (realHours + Math.floor(totMins / 60)) % 24;
+  
+  return ('<span class = "rt-box" id = "rt-box-' + index + '"> <span id = "rt-Hrs-' + index +
+  '">' + hrs + '</span> : <span id = "rt-Mins-' + index + '">' + mins + '</span></span>');
 }
 
 function genTimeBox (m, s, label) {
@@ -163,10 +171,10 @@ function renderBoxes() {
     "<form> <input id = 'minBox-" + i + "' class = 'min-box' type='text' " +
     "name='mins' disabled = 'disabled' value="+ boxMinutes +">:<input id = " +
     "'secBox-"+ i +"' class = 'sec-box' type='text' name='secs' disabled = " +
-    "'disabled' value="+ box.seconds%60 +"><input id = 'labelBox-"+ i +"' " +
+    "'disabled' value="+ box.seconds%60 + "><input id = 'labelBox-"+ i +"' " +
     "class = 'label-box' type='text' disabled = 'disabled' name='label' " +
     "value="+ stringToHTML(box.label) +"> <input id = 'delete-"+ i +"' class = 'delete-btn' " +
-    "type='button' value='X' onclick = 'deleteBox("+i+");'> </form> </div>");
+    "type='button' value='X' onclick = 'deleteBox("+i+");'> </form></div>" + genRealtimeBox(boxMinutes, box.seconds % 60, i));
     
       
     boxList.appendChild(boxLi);
@@ -212,4 +220,20 @@ function play_alert() {
 function stop_alert() {
   bell.pause();
   bell.currentTime = 0;
+}
+
+function totalBtnTimeUpToIndex (index) {
+  var mins = 0;
+  var secs = 0;
+  for (var i = 0; i < index + 1; i ++) {
+    if (parseInt(boxes[i].minutes) > -1) {
+      mins += parseInt(boxes[i].minutes);
+      secs += parseInt(boxes[i].seconds);
+    }
+  }
+  mins += Math.floor(secs / 60);
+  secs = secs % 60;
+  
+  console.log('mins: ' + mins);
+  return [mins, secs];
 }
