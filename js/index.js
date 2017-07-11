@@ -112,8 +112,8 @@ function genRealtimeBox (xMin, xSec, index) {
   var totMins = realMinutes + mins2 + Math.floor(secs2 / 60);
   var hrs = (realHours + Math.floor(totMins / 60)) % 24;
   
-  return ('<span class = rt-box id = rt-box-' + index + '> <span id = rt-Hrs-' + index +
-  '>' + hrs + '</span> : <span id = rt-Mins-' + index + '>' + mins + '</span></span>');
+  return ('<span class = "rt-box" id = "rt-box-' + index + '"> <span id = "rt-Hrs-' + index +
+  '">' + hrs + '</span> : <span id = "rt-Mins-' + index + '">' + mins + '</span></span>');
 }
 
 function genTimeBox (m, s, label) {
