@@ -1,23 +1,23 @@
-var scr = document.getElementById("main-screen");
-var minBox = document.getElementById("minBox");
-var secBox = document.getElementById("secBox");
-var statusBox = document.getElementById('span-status');
-var boxList = document.getElementById('box-list');
-var toggleButton = document.getElementById('toggleButton');
-var timerLabel = document.getElementById('timer-label');
+let scr = document.getElementById("main-screen");
+let minBox = document.getElementById("minBox");
+let secBox = document.getElementById("secBox");
+let statusBox = document.getElementById('span-status');
+let boxList = document.getElementById('box-list');
+let toggleButton = document.getElementById('toggleButton');
+let timerLabel = document.getElementById('timer-label');
 
-var mins = 0;
-var secs = 0;
-var label = '';
-var paused = true;
+let mins = 0;
+let secs = 0;
+let label = '';
+let paused = true;
 
-var bellPath = 'sounds/japanese_temple_bell.mp3';
-var bell = new Audio(bellPath);
+let bellPath = 'sounds/japanese_temple_bell.mp3';
+let bell = new Audio(bellPath);
 
-var boxes = [1];
+let boxes = [1];
 
 function parseSecs() {
-  var mins_new = 0;
+  let mins_new = 0;
   if (secs >= 60) {
     mins_new = Math.floor(secs / 60);
     secs = secs % 60;
@@ -107,19 +107,22 @@ function timeOut() {
 }
 
 function genRealtimeBox (xMin, xSec, index) {
-  var currentTime = new Date();
-  var realHours = currentTime.getHours();
-  var realMinutes = currentTime.getMinutes();
+  let currentTime = new Date();
+  let realHours = currentTime.getHours();
+  let realMinutes = currentTime.getMinutes();
   
-  var mins2 = totalBtnTimeUpToIndex(index)[0];
-  var secs2 = totalBtnTimeUpToIndex(index)[1];
+  let mins2 = totalBtnTimeUpToIndex(index)[0];
+  let secs2 = totalBtnTimeUpToIndex(index)[1];
   
-  var mins = (realMinutes + mins2 + Math.floor(secs2 / 60)) % 60;
-  var totMins = realMinutes + mins2 + Math.floor(secs2 / 60);
-  var hrs = (realHours + Math.floor(totMins / 60)) % 24;
+  let curMins = mins;
+  let curSecs = secs;
+  
+  let minsNew = (realMinutes + mins2 + Math.floor(secs2 / 60)) % 60;
+  let totMinsNew = realMinutes + mins2 + Math.floor(secs2 / 60);
+  let hrsNew = (realHours + Math.floor(totMinsNew / 60)) % 24;
   
   return ('<span class = "rt-box" id = "rt-box-' + index + '"> <span id = "rt-Hrs-' + index +
-  '">' + hrs + '</span> : <span id = "rt-Mins-' + index + '">' + mins + '</span></span>');
+  '">' + hrsNew + '</span> : <span id = "rt-Mins-' + index + '">' + minsNew + '</span></span>');
 }
 
 function genTimeBox (m, s, label) {
@@ -140,16 +143,16 @@ function genTimeBox (m, s, label) {
 }
 
 function addBox() {
-  var minBoxNew = document.getElementById('minBoxNew');
-  var secBoxNew = document.getElementById('secBoxNew');
-  var labelBoxNew = document.getElementById('labelBoxNew');
+  let minBoxNew = document.getElementById('minBoxNew');
+  let secBoxNew = document.getElementById('secBoxNew');
+  let labelBoxNew = document.getElementById('labelBoxNew');
   
-  var minBoxNewR = document.getElementById('minBoxNewR');
-  var secBoxNewR = document.getElementById('secBoxNewR');
-  var labelBoxNewR = document.getElementById('labelBoxNewR');
+  let minBoxNewR = document.getElementById('minBoxNewR');
+  let secBoxNewR = document.getElementById('secBoxNewR');
+  let labelBoxNewR = document.getElementById('labelBoxNewR');
   
-  var newBox = genTimeBox(minBoxNew.value, secBoxNew.value, labelBoxNew.value); 
-  var newBoxR = genTimeBox(minBoxNewR.value, secBoxNewR.value, labelBoxNewR.value);
+  let newBox = genTimeBox(minBoxNew.value, secBoxNew.value, labelBoxNew.value);
+  let newBoxR = genTimeBox(minBoxNewR.value, secBoxNewR.value, labelBoxNewR.value);
   boxes.push(newBox);
   boxes.push(newBoxR);
   clearBoxesOnScreen();
@@ -167,11 +170,11 @@ function deleteBox(index) {
 }
 
 function renderBoxes() {
-  var len = boxes.length;
-  for (var i = 1; i < len; i ++) {
-    var box = boxes[i];
-    var boxLi = document.createElement("LI");
-    var boxMinutes = parseInt(box.minutes, 10) + Math.floor(box.seconds / 60);
+  let len = boxes.length;
+  for (let i = 1; i < len; i ++) {
+    let box = boxes[i];
+    let boxLi = document.createElement("LI");
+    let boxMinutes = parseInt(box.minutes, 10) + Math.floor(box.seconds / 60);
     
     boxLi.innerHTML = ("<div id = 'timeBlock-" + i + "' class = 'time-block'> " +
     "<form> <input id = 'minBox-" + i + "' class = 'min-box' type='text' " +
@@ -189,10 +192,10 @@ function renderBoxes() {
 }
 
 function stringToHTML(label) {
-  var lb = label.split(' ');
-  var retVal = '';
+  let lb = label.split(' ');
+  let retVal = '';
   retVal += '"';
-  for (var i = 0; i < lb.length; i ++) {
+  for (let i = 0; i < lb.length; i ++) {
     retVal = retVal + lb[i]  + ' ';
   }
   retVal += '"';
@@ -202,14 +205,14 @@ function stringToHTML(label) {
 function changeColor() {
   //rgb
   console.log('event fired');
-  var colors = [0, 0, 0];
-  var hour = new Date().getHours();
+  let colors = [0, 0, 0];
+  let hour = new Date().getHours();
   console.log(hour);
   
   //Will get a valid rgb color
-  var color = parseInt(255 - 255/24*(24 - hour));
+  let color = parseInt(255 - 255/24*(24 - hour));
   console.log(color);
-  for(var i = 0; i < colors.length; i++) {
+  for(let i = 0; i < colors.length; i++) {
     colors[i] = color;
   }
   
@@ -229,9 +232,9 @@ function stop_alert() {
 }
 
 function totalBtnTimeUpToIndex (index) {
-  var mins = 0;
-  var secs = 0;
-  for (var i = 0; i < index + 1; i ++) {
+  let mins = 0;
+  let secs = 0;
+  for (let i = 0; i < index + 1; i ++) {
     if (parseInt(boxes[i].minutes) > -1) {
       mins += parseInt(boxes[i].minutes);
       secs += parseInt(boxes[i].seconds);
