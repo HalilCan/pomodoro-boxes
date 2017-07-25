@@ -111,14 +111,15 @@ function genRealtimeBox (xMin, xSec, index) {
   let realHours = currentTime.getHours();
   let realMinutes = currentTime.getMinutes();
   
-  let mins2 = totalBtnTimeUpToIndex(index)[0];
-  let secs2 = totalBtnTimeUpToIndex(index)[1];
+  let mins2 = totalBtnTimeUpToIndex(index)[0] - totalBtnTimeUpToIndex(0)[0];
+  let secs2 = totalBtnTimeUpToIndex(index)[1] - totalBtnTimeUpToIndex(0)[1];
   
-  let curMins = mins;
-  let curSecs = secs;
+  let curMins = parseInt(minBox.value);
+  let curSecs = parseInt(secBox.value);
   
-  let minsNew = (realMinutes + mins2 + Math.floor(secs2 / 60)) % 60;
-  let totMinsNew = realMinutes + mins2 + Math.floor(secs2 / 60);
+  let minsNew = (realMinutes + mins2 + curMins + Math.floor((secs2 + curSecs) / 60)) % 60;
+  let totMinsNew = (realMinutes + mins2 + curMins + Math.floor((secs2 + curSecs) / 60));
+  console.log('totMinsNew = ' + totMinsNew);
   let hrsNew = (realHours + Math.floor(totMinsNew / 60)) % 24;
   
   return ('<span class = "rt-box" id = "rt-box-' + index + '"> <span id = "rt-Hrs-' + index +
@@ -242,7 +243,5 @@ function totalBtnTimeUpToIndex (index) {
   }
   mins += Math.floor(secs / 60);
   secs = secs % 60;
-  
-  console.log('mins: ' + mins);
   return [mins, secs];
 }
