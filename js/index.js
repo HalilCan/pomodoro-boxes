@@ -81,6 +81,12 @@ function updateDisp() {
   secBox.value = secs;
   console.log(label);
   timerLabel.innerHTML = label;
+  if (!paused) {
+    document.title = mins + ':' + secs;
+  }
+  if (paused) {
+    document.title = 'Paused';
+  }
 }
 
 function refreshBox() {
