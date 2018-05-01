@@ -33,7 +33,9 @@ body {
   border-radius: 4px;
   flex-flow: row nowrap;
   margin-left: auto;
-  width: 500px;
+  width: auto;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #span-timer input[type="text"]:disabled {
@@ -68,16 +70,26 @@ body {
   border-bottom: 1px solid black;
 }
 
-.box
-{
+.box {
   margin: auto;
 }
 
 #timer-status-box{
   min-height: 400px;
+  min-width: 400px;
   flex-flow: column wrap;
   position: relative;
   top: 20vh;
+}
+
+@media only screen and (max-width: 1000px) {
+  #timer-status-box{
+    min-height: 80vh;
+    min-width: 70vw;
+    flex-flow: column wrap;
+    position: relative;
+    top: 20vh;
+  }
 }
 
 .btn {
@@ -107,20 +119,42 @@ body {
   position: relative;
 }
 
-body {
-  position: absolute;
-  top: 30%;
-  left: 50%;
+@media only screen and (min-width: 1000px) {
+  body {
+    position: absolute;
+    top: 30%;
+    left: 50%;
 
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
-  background-color: #ecf0f1;
-  color: #34495e;
-  text-align: center;
+    background-color: #ecf0f1;
+    color: #34495e;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    background-color: #ecf0f1;
+    color: #34495e;
+    text-align: center;
+
+    font-size: 25px;
+  }
 }
 
 ul {
