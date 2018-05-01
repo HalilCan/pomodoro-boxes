@@ -43,12 +43,14 @@ function toggleState() {
   
   if (paused) {
     statusBox.innerHTML = ('Timer is paused');
-    toggleButton.value = ('Play');
+    toggleButton.value = (`\u9654`);
+    toggleButton.innerText = (`\u9654`);
     minBox.disabled = false;
     secBox.disabled = false;
   } else {
     statusBox.innerHTML = ('Time is ticking');
-    toggleButton.value = ('Pause');
+    toggleButton.value = (`\u9612 \u9612`);
+    console.log (`ticking:\u9612 \u9612`);
     minBox.disabled = true;
     secBox.disabled = true;
   }
@@ -185,10 +187,8 @@ function renderBoxes() {
     "class = 'label-box' type='text' disabled = 'disabled' name='label' " +
     "value="+ stringToHTML(box.label) +"> <input id = 'delete-"+ i +"' class = 'delete-btn' " +
     "type='button' value='X' onclick = 'deleteBox("+i+");'> </form></div>" + genRealtimeBox(boxMinutes, box.seconds % 60, i));
-    
-      
+
     boxList.appendChild(boxLi);
-    
   }
 }
 
