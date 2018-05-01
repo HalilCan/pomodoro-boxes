@@ -14,7 +14,7 @@ body {
 }
 
 #pomodoro-box {
-  margin-top: 5%;
+  margin-top: 40vh;
   display:inline-block;
 }
 
@@ -27,12 +27,12 @@ body {
 
 .container 
 {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
   display: flex;
   border: 2px dotted darkblue;
   border-radius: 4px;
   flex-flow: row nowrap;
-  margin: auto;
+  margin-left: auto;
   width: 500px;
 }
 
@@ -76,7 +76,8 @@ body {
 #timer-status-box{
   min-height: 400px;
   flex-flow: column wrap;
-  margin-top: 40px;
+  position: relative;
+  top: 20vh;
 }
 
 .btn {
