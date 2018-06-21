@@ -43,14 +43,14 @@ function toggleState() {
   
   if (paused) {
     statusBox.innerHTML = ('Timer is paused');
-    toggleButton.value = (`\u9654`);
-    toggleButton.innerText = (`\u9654`);
+    toggleButton.value = (`\u25B6`);
+    toggleButton.innerText = (`\u25B6`);
     minBox.disabled = false;
     secBox.disabled = false;
   } else {
     statusBox.innerHTML = ('Time is ticking');
-    toggleButton.value = (`\u9612 \u9612`);
-    console.log (`ticking:\u9612 \u9612`);
+    toggleButton.value = (`\u258C \u258C`);
+    console.log (`ticking:\u258C \u258C`);
     minBox.disabled = true;
     secBox.disabled = true;
   }
