@@ -221,7 +221,7 @@ function changeColor() {
   console.log("event fired. color get:" + colors[0] + colors[1] + colors[2]);
 }
 
-setInterval(changeColor,1000000);
+setInterval(changeColor,1000);
 
 function play_alert() {
   bell.play();
