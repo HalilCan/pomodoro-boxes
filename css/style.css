@@ -376,10 +376,13 @@
   }
 
   #toggleButton {
-    width: 70px;
-    margin-left: 150px;
+    width: 40px;
+    margin-left: auto;
     margin-top: 10px;
     margin-bottom: 20px;
+    font-size: 30px;
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
 
   .rt-box {
