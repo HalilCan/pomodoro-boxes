@@ -63,6 +63,40 @@
     margin: 0 auto;
   }
 
+  #minBox {
+    background-color: whitesmoke;
+    position: relative;
+    top: 0px;
+    font-size: 20px;
+    height: 25px;
+    width: 120px;
+    text-align: right;
+    border: none;
+    box-shadow: none;
+  }
+  #minBox:disabled {
+    background-color: whitesmoke;
+    border: none;
+    box-shadow: none;
+  }
+
+  #secBox {
+    background-color: whitesmoke;
+    position: relative;
+    top: 0px;
+    font-size: 20px;
+    height: 25px;
+    width: 120px;
+    border: none;
+    box-shadow: none;
+  }
+  #secBox:disabled {
+    background-color: whitesmoke;
+    border: none;
+    box-shadow: none;
+  }
+
+  /*This one concerns the lower (timebox) text fields.*/
   .min-box{
     background-color: whitesmoke;
     width: 50px;
