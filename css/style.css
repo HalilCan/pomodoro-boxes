@@ -427,3 +427,7 @@
     color: #d7dee4;
   }
 }
+
+#minBoxNew, #minBoxNewR, #secBoxNew, #secBoxNewR {
+  border-bottom: 1px solid black;
+}
