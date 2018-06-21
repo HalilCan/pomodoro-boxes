@@ -1,7 +1,7 @@
 let scr = document.getElementById("main-screen");
 let minBox = document.getElementById("minBox");
 let secBox = document.getElementById("secBox");
-let statusBox = document.getElementById('span-status');
+//let statusBox = document.getElementById('span-status');
 let boxList = document.getElementById('box-list');
 let toggleButton = document.getElementById('toggleButton');
 let timerLabel = document.getElementById('timer-label');
@@ -42,13 +42,13 @@ function toggleState() {
   renderBoxes();
   
   if (paused) {
-    statusBox.innerHTML = ('Timer is paused');
+    //statusBox.innerHTML = ('Timer is paused');
     toggleButton.value = (`\u25B6`);
     toggleButton.innerText = (`\u25B6`);
     minBox.disabled = false;
     secBox.disabled = false;
   } else {
-    statusBox.innerHTML = ('Time is ticking');
+    //statusBox.innerHTML = ('Time is ticking');
     toggleButton.value = (`\u258C \u258C`);
     console.log (`ticking:\u258C \u258C`);
     minBox.disabled = true;
