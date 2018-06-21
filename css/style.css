@@ -360,7 +360,6 @@
     position: relative;
   }
 
-
   ul {
     padding-left: 10px;
     list-style-type: none;
@@ -423,4 +422,13 @@
 
 #span-loop-table {
   list-style-image: none;
+}
+
+.delete-btn {
+  background-color: #3e75cc;
+  color: #ecf0f1;
+}
+
+.label-box:disabled {
+  border: none;
 }
