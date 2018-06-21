@@ -152,7 +152,7 @@
 
   ul {
     padding-left: 10px;
-    list-style-image: none;
+    list-style-type: none;
   }
 
   #button-container {
@@ -363,7 +363,7 @@
 
   ul {
     padding-left: 10px;
-    list-style-image: none;
+    list-style-type: none;
   }
 
   #button-container {
