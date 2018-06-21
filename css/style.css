@@ -50,12 +50,6 @@
     padding-right: 30px;
   }
 
-  #span-timer input[type="text"]:disabled {
-    background: aliceblue;
-    border: 1px dotted cornflowerblue;
-    border-radius: 2px;
-  }
-
   #hdr {
     font-family: 'Bungee Shade', cursive;
     font-size: 2em;
@@ -267,12 +261,6 @@
     width: auto;
     padding-left: 30px;
     padding-right: 30px;
-  }
-
-  #span-timer input[type="text"]:disabled {
-    background: aliceblue;
-    border: 1px dotted cornflowerblue;
-    border-radius: 2px;
   }
 
   #hdr {
