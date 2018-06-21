@@ -198,11 +198,11 @@
   }
 
   .rt-box {
-    display: inline;
-    position: absolute;
-    margin-left: 155px;
-    margin-top: -33px;
-    color: #d7dee4;
+      display: inline;
+      position: absolute;
+      margin-left: 180px;
+      margin-top: -45px;
+      color: #d7dee4;
   }
 }
 
@@ -409,14 +409,18 @@
   }
 
   .rt-box {
-    display: inline;
-    position: absolute;
-    margin-left: 155px;
-    margin-top: -33px;
-    color: #d7dee4;
+      display: inline;
+      position: absolute;
+      margin-left: 180px;
+      margin-top: -45px;
+      color: #d7dee4;
   }
 }
 
 #minBoxNew, #minBoxNewR, #secBoxNew, #secBoxNewR {
   border-bottom: 1px solid black;
+}
+
+#span-loop-table {
+  list-style-image: none;
 }
