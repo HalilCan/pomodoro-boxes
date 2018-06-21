@@ -1,63 +1,67 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>pomodoroClock</title>
+    <meta charset="UTF-8">
+    <title>pomodoroClock</title>
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
 
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch'
+          href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="media/clock.png"/>
 </head>
 
 <body>
-  <div class='container' id='timer-status-box'>
-      <div class = 'box-header' id = 'hdr'>pmdro</div>
-  <div class='box'>
+<div class='container' id='timer-status-box'>
+    <div class='box-header' id='hdr'>pmdro</div>
+    <div class='box'>
+    <!--
     <span id='span-status'>
   Timer is paused
-</span> <span id = 'timer-label'></span>
+    </span>
+    -->
+    <span id='timer-label'></span>
     <span id='span-timer'>
   <form>
-  <input id = 'minBox' type="text" name="mins" value=00 disabled = 'disabled'>:
-  <input id = 'secBox' type="text" name="secs" value=01 disabled = 'disabled'><br>
-  <input class = 'btn' id = 'toggleButton' type="button" value=&#9654; onclick = "toggleState();">
+  <input id='minBox' type="text" name="mins" value=00 disabled='disabled'>:
+  <input id='secBox' type="text" name="secs" value=01 disabled='disabled'><br>
+  <input class='btn' id='toggleButton' type="button" value=&#9654; onclick="toggleState();">
   </form>
 </span>
-  </div>
-  <div class='box' id='loop-display-box'>
+    </div>
+    <div class='box' id='loop-display-box'>
     <span id='span-loop-table'>
         Timeblock queue:
-        <ul id = 'box-list'>
+        <ul id='box-list'>
            Empty
   </ul>
 </span>
-  </div>
+    </div>
 
-  <div class='box' id='loop-box'>
+    <div class='box' id='loop-box'>
     <span id='span-add'>
           <div>
             Add a set of timeblocks:
           </div>
 
   <form>
-    <div class = 'container' id = 'add-box'>
-    <div class = 'box'>
-    <input id = 'minBoxNew' class = 'min-box' type="text" name="mins" value=25>:
-        <input id = 'secBoxNew' class = 'sec-box' type="text" name="secs" value=00>-
-    <input id = 'labelBoxNew' class = 'label-box' type="text" name="label" value="Focus"> <br>
-    <input id = 'minBoxNewR' class = 'min-box' type="text" name="mins" value=5>:
-        <input id = 'secBoxNewR' class = 'sec-box' type="text" name="secs" value=00>-
-    <input id = 'labelBoxNewR' class = 'label-box' type="text" name="label" value="Relax">
+    <div class='container' id='add-box'>
+    <div class='box'>
+    <input id='minBoxNew' class='min-box' type="text" name="mins" value=25>:
+        <input id='secBoxNew' class='sec-box' type="text" name="secs" value=00>-
+    <input id='labelBoxNew' class='label-box' type="text" name="label" value="Focus"> <br>
+    <input id='minBoxNewR' class='min-box' type="text" name="mins" value=5>:
+        <input id='secBoxNewR' class='sec-box' type="text" name="secs" value=00>-
+    <input id='labelBoxNewR' class='label-box' type="text" name="label" value="Relax">
     </div>
-    <div class = 'box'>
-    <input id = 'add-box-btn' class = 'add-btn btn' type="button" value="+" onclick = "addBox();">
+    <div class='box'>
+    <input id='add-box-btn' class='add-btn btn' type="button" value="+" onclick="addBox();">
     </div>
     </div>
   </form>
 </span>
-  </div>
+    </div>
 
 
 </div>
@@ -77,10 +81,10 @@
     Guide here
   </div>
 -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src='https://www.google.com/jsapi'></script>
 
-    <script src="js/index.js"></script>
+<script src="js/index.js"></script>
 
 </body>
 </html>
