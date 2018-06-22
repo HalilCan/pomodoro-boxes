@@ -211,7 +211,7 @@ function changeColor() {
   console.log(hour);
   
   //Will get a valid rgb color
-  let color = parseInt(255 - 255/24*(24 - hour));
+  let color = parseInt(255/24*(24 - hour));
   console.log(color);
   for(let i = 0; i < colors.length; i++) {
     colors[i] = color;
