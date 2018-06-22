@@ -188,6 +188,7 @@
     }
 
     #toggleButton {
+        text-align: center;
         width: 40px;
         margin-left: auto;
         margin-top: 10px;
@@ -400,6 +401,7 @@
     }
 
     #toggleButton {
+        text-align: center;
         width: 214px;
         margin-left: auto;
         margin-top: 10px;
